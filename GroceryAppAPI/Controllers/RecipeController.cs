@@ -30,6 +30,7 @@ namespace GroceryAppAPI.Controllers
             List<Recipe> recipes = await _context.Recipes.ToListAsync();
             return Ok(recipes);
         }
+
         [HttpGet]
         public async Task<IHttpActionResult> GetRecipeById(int id)
         {
@@ -38,6 +39,31 @@ namespace GroceryAppAPI.Controllers
             {
                 return NotFound();
             }
+
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetRecipeByName(string recipe)
+        {
+            List<Recipe> recipe;
+            if (recipe == default)
+            {
+                recipe = await _context.Recipe
+                .Where(c => c.Recipe.ToLower() == recipe.ToLower())
+                .ToListAsync();
+            }
+            else if (recipe == default)
+            {
+                recipe = await _context.Recipe
+                .Where(c => c.Recipe.ToLower() == recipe.ToLower())
+                .ToListAsync();
+            }
+            else
+            {
+                recipe = await _context.Recipe
+                .Where(c => c.Recipe.ToLower() == recipe.ToLower())
+                .ToListAsync();
+            }
+
             return Ok(recipe);
         }
     }
