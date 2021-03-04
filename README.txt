@@ -7,5 +7,7 @@ Trello link: https://trello.com/b/s95ybWhM/team-grocery-app
 Contributors:
 
 Sterling Cole 
+
 Zuri Rojas
+
 Norman "Ricky" Bennett
