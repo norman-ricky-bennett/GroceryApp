@@ -32,6 +32,16 @@ namespace GroceryAppAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IHttpActionResult> GetRecipeById(int id)
+        {
+            var recipe = await _context.Recipes.FindAsync(id);
+            if (recipe == default)
+            {
+                return NotFound();
+            }
+
+
+        [HttpGet]
         public async Task<IHttpActionResult> GetRecipeByName(string recipe)
         {
             List<Recipe> recipe;
